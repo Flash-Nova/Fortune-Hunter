@@ -1,0 +1,35 @@
+3a
+
+Provide a game with an objective of participants which they have to figure out all of the treasures within a limited chance. It will train people's ability of logical and visual analysis.
+
+Users are allowed to press A S D W in order to move in a specific area and Enter to place a sensor. There is a pair of crossing lines in blue and green color with a chiasma of aqua. Once a sensor is placed, a number shows the Manhattan distance from the sensor to the nearest treasure.
+
+This program has no direct input due to the attribute of a visual game. For the first part, feedback of loading will be printed; and the game will directly start after the user press any key.
+
+3b
+
+treasure_map
+
+It represents the information of every node in the map, including the value (AKA. the distance to the nearest treasure) and the state (AKA the status of the node, showing whether it has been placed on the sensor or not)
+
+This list holds the most special meaning among all variables in code, that if it disappears, the only alternative way should be declaring a new array, which has almost the same function as the vector.
+
+3c
+
+The procedure, motion, has the function as same as its name, which is to handle all motions including going up, down, left, right, and placing sensors. It will first read or change the data stored in the vector treasure_map and will change the nodes printed on the map. As for a move, it will 'erase' (change back to white color) the original crosshair, and 'print' (change color to blue, green, or aqua) the new crosshair. As for the placement of the sensor, it will change the status of the node to true, which means it has been checked.
+
+First, separate the whole procedure into 3 different parts by IF statements, representing placing the sensor, moving horizontally (left or right), and moving vertically (up or down). As for 'place', change the status of the focusing number stored in treasure_map to True. Then read and print out the value on the focus. As for a horizontal move, erase the vertical crosshair, and print the new one. As for a vertical move, erase the horizontal crosshair, and print a new one.
+
+3d
+
+Since the call of motion procedure depends on the action the user has done, we now assume the user has pressed the Enter key. The interact procedure captures the change of keyboard status, creates the 'enter' command, and calls the motion procedure with the 'enter' command. 
+
+We then assume the user has pressed the Left arrow key. The interact procedure captures the change of keyboard status, creates the 'left' command, and calls the motion procedure with the 'left' command. 
+
+That the user has pressed the Enter key and wants to place a sensor at the focus is tested.
+
+That the user has pressed the Left arrow key and is going to move leftward from the focus is tested.
+
+There are 2 effects on the code. One is that the status of the node on the focus in treasure_map has been modified to True. Another is that a new number appears on the focus on the screen, representing the Manhattan distance to the nearest treasure.
+
+There are also 2 effects on the code. One is that the crosshair variable has been modified and now stores the coordinate after the change, shown as the x position value has decreased 1. Another is that the crosshair printed on the screen has changed to the left adjacent line.
